@@ -1,0 +1,876 @@
+/*======================================
+
+        Default Values
+
+Fonts: font-family: 'Lobster', cursive;
+font-family: 'PT Sans Narrow', sans-serif;
+
+Colors:
+1. Orange: #F79041;
+2. Dark Gray: #fff;
+3. Gray: #ccc;
+4. White: #fff;
+
+======================================*/
+
+
+
+/*------------------------------
+        Basic setup
+------------------------------*/
+
+:root {
+    --main-color: #ea9a96;
+    --secondary-color: #f8b24f;
+    --primary-color: #e5e5e5;
+    --btn-color: #303960;
+
+    --main-font: 'PT Sans Narrow', sans-serif;
+    --highlight-font: 'Lobster', cursive;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+}
+
+
+
+li {
+    list-style: none;
+    display: inline-block;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+/*------------------------------
+        Header
+------------------------------*/
+.open-menu {
+    font-size: 20px;
+    color: var(--main-color);
+}
+
+.icon-color {
+    color: var(--main-color);
+}
+
+.start-menu {
+    position: fixed;
+    height: 100vh;
+    width: 60px;
+    background-color: var(--btn-color);
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    box-shadow: 1px 5px 15px var(--primary-color);
+    transition: all 0.5s ease;
+}
+
+.menu-closed {
+    position: absolute;
+    top: 30px;
+}
+
+.menu-closed i {
+    color: var(--main-color);
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.menu-social {
+    transform: rotate(-90deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.menu-social a {
+    display: flex;
+    color: var(--main-color);
+    margin-right: 50px;
+    align-items: center;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.menu-social a i:hover {
+    color: var(--secondary-color);
+}
+
+.menu-social a i {
+    margin-right: 5px;
+}
+
+/*---------------------------
+     Navigation-menu
+----------------------------*/
+.main-nav {
+    position: fixed;
+    height: 100vh;
+    background-color: var(--btn-color);
+    transition: all .5s ease;
+    z-index: 1000;
+
+    width: 600px;
+    left: -600px;
+    display: none;
+
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 3px 5px 15px var(--main-color);
+    background-image: url(../img/carsLogo.png);
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+
+.icon-close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: var(--main-color);
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.button-anim {
+    -webkit-animation: buttonAnim 0.3s forwards ease-in;
+            animation: buttonAnim 0.3s forwards ease-in;
+    -webkit-animation-delay: 0.15s;
+            animation-delay: 0.15s;
+}
+
+@-webkit-keyframes buttonAnim {
+    0% {
+        left: -10px
+    }
+
+    30% {
+        left: 1px;
+    }
+
+    100% {
+        left: -100px
+    }
+}
+
+@keyframes buttonAnim {
+    0% {
+        left: -10px
+    }
+
+    30% {
+        left: 1px;
+    }
+
+    100% {
+        left: -100px
+    }
+}
+
+.button-anim-close {
+    -webkit-animation: buttonAnimClose .3s forwards ease-in;
+            animation: buttonAnimClose .3s forwards ease-in;
+    -webkit-animation-delay: .6s;
+            animation-delay: .6s;
+}
+
+@-webkit-keyframes buttonAnimClose {
+    from {
+        left: -100px;
+    }
+
+    to {
+        left: 0
+    }
+}
+
+@keyframes buttonAnimClose {
+    from {
+        left: -100px;
+    }
+
+    to {
+        left: 0
+    }
+}
+
+.nav-anim {
+    -webkit-animation: newAnim .5s forwards linear;
+            animation: newAnim .5s forwards linear;
+    display: flex;
+    -webkit-animation-delay: .5s;
+            animation-delay: .5s;
+}
+
+@-webkit-keyframes newAnim {
+    from {
+        left: -600px;
+    }
+
+    to {
+        left: 0
+    }
+}
+
+@keyframes newAnim {
+    from {
+        left: -600px;
+    }
+
+    to {
+        left: 0
+    }
+}
+
+.nav-anim-close {
+    -webkit-animation: navAnimClose .7s forwards linear;
+            animation: navAnimClose .7s forwards linear;
+    display: flex;
+}
+
+@-webkit-keyframes newAnimClose {
+    0% {
+        left: 0
+    }
+
+    30% {
+        left: 2px
+    }
+
+    100% {
+        left: -600px;
+    }
+}
+
+@keyframes newAnimClose {
+    0% {
+        left: 0
+    }
+
+    30% {
+        left: 2px
+    }
+
+    100% {
+        left: -600px;
+    }
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-menu a {
+    color: var(--main-color);
+    margin: 20px;
+    font-size: 30px;
+    transition: all 0.3s ease;
+    font-family: var(--main-font);
+    letter-spacing: 0.2rem;
+    transition: 1s ease-in-out;
+}
+
+
+.nav-menu a:hover {
+    color: var(--btn-color);
+    background-color: var(--secondary-color);
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+}
+
+.main-nav h2 {
+    position: absolute;
+    top: 50px;
+    left: 10%;
+    color: var(--main-color);
+    font-size: 35px;
+    font-weight: 400;
+    font-family: var(--main-font);
+    letter-spacing: 0.2rem;
+}
+
+/*---------------------------
+     heading Section
+----------------------------*/
+.heading-section {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--btn-color);
+}
+
+.heading-section img {
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-60%, -50%);
+    z-index: 100;
+    max-width: 800px;
+}
+
+.left-heading {
+    background-color: var(--btn-color);
+    flex: 1;
+}
+
+.right-heading {
+    flex: 2;
+    background-color: var(--primary-color);
+    -webkit-clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.heading-text {
+    display: flex;
+    margin-top: 150px;
+    flex-direction: column;
+    margin-left: 150px;
+    height: 100vh;
+}
+
+.heading-text h1 {
+    text-transform: uppercase;
+    color: var(--primary-color);
+    font-size: 65px;
+}
+
+.heading-text h1 span {
+    color: var(--main-color);
+}
+
+.heading-text h2 {
+    text-transform: uppercase;
+    color: var(--primary-color);
+    font-size: 17px;
+}
+
+.heading-text div {
+    width: 100%;
+    height: 1px;
+    background-color: var(--primary-color);
+    margin: 60px 0;
+}
+
+.heading-text h2:nth-child(4) {
+    color: var(--main-color);
+    font-size: 1.1rem;
+}
+
+.heading-text h3 {
+    font-family: var(--highlight-font);
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    margin-top: 2px;
+}
+
+.heading-text a {
+    margin-top: 40px;
+    color: var(--main-color);
+    text-transform: uppercase;
+    border: 1px solid var(--main-color);
+    width: 50%;
+    text-align: center;
+    padding: 10px;
+    border-radius: 25px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    font-family: var(--main-font);
+    letter-spacing: 0.1rem;
+}
+
+.heading-text a:hover {
+    background-color: var(--main-color);
+    color: var(--btn-color);
+    border-color: var(--secondary-color);
+}
+
+/*---------------------------
+     About Section
+----------------------------*/
+.about-section {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+    position: relative;
+}
+
+.about-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--primary-color);
+    width: 75%;
+    height: 75%;
+    box-shadow: 1px 15px 35px var(--main-color);
+    display: flex;
+    align-items: center;
+}
+
+.about-content div {
+    flex: 1;
+}
+
+.about-content div h2,
+.about-content div p {
+    width: 70%;
+    margin: auto;
+    color: var(--main-color);
+}
+
+.about-content div h2 {
+    font-weight: 900;
+    font-size: 3rem;
+    letter-spacing: 0.1rem;
+    font-family: var(--main-font)
+}
+
+.about-content div p {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    letter-spacing: 0.1rem;
+    line-height: 1.2rem;
+    font-family: var(--highlight-font)
+}
+
+.about-content div img {
+    width: 80%;
+}
+
+.left-about {
+    flex: 1;
+    background-color: var(--btn-color);
+    height: 100%;
+    -webkit-clip-path: polygon(0 0, 66.66% 0, 0% 100%, 0% 100%);
+            clip-path: polygon(0 0, 66.66% 0, 0% 100%, 0% 100%);
+}
+
+.right-about {
+    flex: 1;
+    background-color: var(--primary-color);
+    height: 100%;
+}
+
+/*---------------------------
+     Offers Section
+----------------------------*/
+.offers-section {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-left: 3.6rem;
+}
+
+.offers {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.offers-heading h2 {
+    font-size: 60px;
+    text-align: center;
+    margin-top: 2rem;
+    letter-spacing: 0.1rem;
+    line-height: 3rem;
+    color: var(--secondary-color);
+    font-family: var(--main-font);
+}
+
+.offers-section .pricing {
+    width: 20%;
+    background-color: var(--btn-color);
+    height: 60%;
+    color: var(--main-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 15px 35px var(--main-color);
+    cursor: pointer;
+    font-family: var(--highlight-font);
+}
+
+.offers-section .pricing:hover {
+    box-shadow: 1px 25px 55px var(--secondary-color);
+}
+
+.offers-section .pricing:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    height: 60%;
+    align-items: center;
+    width: 20%;
+    background-color: var(--secondary-color);
+    color: var(--btn-color);
+    margin-top: -3rem;
+    box-shadow: 1px 15px 35px var(--btn-color);
+    font-family: var(--highlight-font);
+}
+
+.offers-section .pricing:nth-child(2):hover {
+    box-shadow: 1px 15px 35px var(--main-color);
+}
+
+.offers-section .pricing h3 {
+    text-transform: uppercase;
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin-bottom: 1.1rem;
+    text-align: center;
+    font-family: var(--main-font);
+}
+
+.offers-section .pricing p {
+    font-size: 1.1rem;
+    letter-spacing: 0.1rem;
+    padding: 0.6rem 1.1rem;
+    text-align: center;
+}
+
+.offers-section .pricing p:last-child {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 50px;
+    font-weight: 700;
+}
+
+.offers-section .pricing p span {
+    font-size: 1rem;
+    vertical-align: text-top;
+    color: var(--secondary-color);
+}
+
+.offers-section .pricing:nth-child(2) p:last-child span {
+    color: var(--primary-color);
+}
+
+/*---------------------------
+     Gallery Section
+----------------------------*/
+.gallery-section {
+    height: 100vh;
+    background-color: var(--btn-color);
+    padding-left: 3.75rem;
+}
+
+.portfolio-section {
+    height: 100vh;
+    padding-left: 3.75rem;
+}
+
+.portfolio-filter {
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.portfolio-filter .button {
+    color: var(--primary-color);
+    text-transform: uppercase;
+    padding: 0.8rem;
+    font-size: 1.25rem;
+    font-family: var(--main-font)
+}
+
+.portfolio-filter .button.active {
+    background-color: var(--secondary-color);
+    border-radius: 0.5rem;
+    color: var(--primary-color)
+}
+
+.cars-gallery {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: flex-start;
+}
+
+.cars-gallery div {
+    width: 25%;
+    margin: 0 2rem;
+}
+
+.cars-gallery div img {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+/*---------------------------
+     Contact Section
+----------------------------*/
+
+.contact-section {
+    height: 100vh;
+    display: flex;
+    background-color: var(--secondary-color);
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-container {
+    display: flex;
+    width: 70%;
+    height: 88%;
+    background-color: var(--primary-color);
+    box-shadow: 1px 35px 35px var(--main-color);
+    border-radius: 0.2rem;
+}
+
+.contact-left {
+    flex: 1;
+    background-color: var(--primary-color);
+    padding: 3.75rem;
+}
+
+.contact-left>p {
+    margin-top: 0.6rem;
+    font-size: 1rem;
+    margin-bottom: 5rem;
+    color: var(--main-color);
+    font-family: var(--highlight-font);
+    text-align: center
+}
+
+.contact-left>h2 {
+    color: var(--main-color);
+    font-family: var(--main-font);
+    letter-spacing: 0.04rem;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    margin: 30px;
+}
+
+.contact-info i {
+    padding: 1rem;
+    font-size: 1.2rem;
+    color: var(--main-color)
+}
+
+.contact-info p {
+    letter-spacing: 0.06rem;
+    line-height: 1.5rem;
+    font-family: var(--highlight-font);
+    color: var(--main-color);
+}
+
+/*right side*/
+.contact-right {
+    flex: 1;
+    background-color: var(--btn-color);
+    -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 38%, 4% 35%, 0 32%, 0 0);
+            clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 38%, 4% 35%, 0 32%, 0 0)
+}
+
+.contact-right form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.contact-right form input {
+    width: 80%;
+    height: 2.8rem;
+    background-color: transparent;
+    border: 2px solid var(--main-color);
+    border-radius: 0.1rem;
+    padding: 1rem;
+    margin: 1.56rem;
+    color: var(--main-color);
+    font-family: var(--main-font);
+    letter-spacing: 0.1rem;
+}
+
+.contact-right form input::-webkit-input-placeholder, .contact-right form textarea::-webkit-input-placeholder {
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+.contact-right form input::-moz-placeholder, .contact-right form textarea::-moz-placeholder {
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+.contact-right form input:-ms-input-placeholder, .contact-right form textarea:-ms-input-placeholder {
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+.contact-right form input::-ms-input-placeholder, .contact-right form textarea::-ms-input-placeholder {
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+.contact-right form input::placeholder,
+.contact-right form textarea::placeholder {
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+.contact-right form input:focus,
+.contact-right form textarea:focus {
+    outline: none;
+}
+
+.contact-right form textarea {
+    background-color: transparent;
+    width: 80%;
+    resize: none;
+    height: 200px;
+    border: 2px solid var(--main-color);
+    border-radius: 0.1rem;
+    padding: 1rem;
+    margin: 1.56rem;
+    color: var(--main-color);
+    font-family: var(--main-font);
+    letter-spacing: 0.1rem;
+}
+
+.contact-right button {
+    width: 12.5rem;
+    height: 2.81rem;
+    background-color: transparent;
+    border: 2px solid var(--main-color);
+    border-radius: 0.1rem;
+    color: var(--main-color);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin: 1.1rem;
+    font-family: var(--main-font);
+    letter-spacing: 0.2rem;
+    transition: all 1s ease;
+}
+
+.contact-right button:hover {
+    background-color: var(--main-color);
+    border: 0.1rem solid var(--main-color);
+    color: var(--btn-color)
+}
+
+/*---------------------------
+     Pre Loader
+----------------------------*/
+.load {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    background-color: var(--primary-color);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.load hr {
+    width: 1.9rem;
+    height: 1.9rem;
+    position: absolute;
+    border-radius: 50%;
+    -webkit-animation: spin 2s ease infinite;
+            animation: spin 2s ease infinite;
+}
+
+.load hr:first-child {
+    background-color: var(--main-color);
+    -webkit-animation-delay: -1.5s;
+            animation-delay: -1.5s;
+}
+
+.load hr:nth-child(2) {
+    background-color: var(--btn-color);
+    -webkit-animation-delay: -1s;
+            animation-delay: -1s
+}
+
+.load hr:nth-child(3) {
+    background-color: var(--main-color);
+    -webkit-animation-delay: -0.5s;
+            animation-delay: -0.5s;
+}
+
+.load hr:last-child {
+    background-color: var(--btn-color);
+}
+
+@-webkit-keyframes spin {
+
+    0%,
+    100% {
+        transform: translate(0);
+    }
+
+    25% {
+        transform: translate(160%);
+    }
+
+    50% {
+        transform: translate(160%, 160%);
+    }
+
+    75% {
+        transform: translate(0, 160%);
+    }
+}
+
+@keyframes spin {
+
+    0%,
+    100% {
+        transform: translate(0);
+    }
+
+    25% {
+        transform: translate(160%);
+    }
+
+    50% {
+        transform: translate(160%, 160%);
+    }
+
+    75% {
+        transform: translate(0, 160%);
+    }
+}

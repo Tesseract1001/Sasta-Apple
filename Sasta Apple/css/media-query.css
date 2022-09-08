@@ -1,0 +1,379 @@
+/*------------------------------
+        Media Query
+------------------------------*/
+:root {
+    --main-color: #ea9a96;
+    --secondary-color: #f8b24f;
+    --primary-color: #e5e5e5;
+    --btn-color: #303960;
+
+    --main-font: 'PT Sans Narrow', sans-serif;
+    --highlight-font: 'Lobster', cursive;
+}
+
+@media all and (max-width: 1800px) {
+    .heading-text {
+        margin-top: 70px;
+        margin-left: 120px;
+    }
+
+    .heading-text h1 {
+        font-size: 55px;
+    }
+
+    .heading-text h2 {
+        text-transform: uppercase;
+        color: #ccc;
+        font-size: 17px;
+    }
+}
+
+
+@media all and (max-width: 1500px) {
+    .heading-section img {
+        max-width: 35rem;
+    }
+
+    .heading-text h1 {
+        font-size: 45px;
+    }
+
+    .heading-text h2 {
+        font-size: 0.8rem;
+    }
+
+    .heading-text h2:nth-child(4) {
+        font-size: 1rem;
+    }
+
+    .about-content div h2 {
+        font-size: 40px;
+        letter-spacing: 1px;
+    }
+
+    .about-content div p {
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .offers-section .pricing {
+        width: 27%;
+    }
+
+    .offers-section .pricing:nth-child(2) {
+        width: 27%;
+    }
+
+    .heading-text a {
+        width: 20rem;
+        color: var(--btn-color);
+        text-transform: uppercase;
+        border: 1px solid var(--btn-color);
+        background-color: var(--main-color);
+    }
+
+    .heading-text a:hover {
+        background-color: var(--btn-color);
+        color: var(--main-color);
+        border-color: var(--btn-color);
+    }
+}
+
+
+@media all and (max-width: 1290px) {
+    .right-heading {
+        flex: 1;
+    }
+
+    .heading-section img {
+        max-width: 600px;
+    }
+
+    .left-about {
+        -webkit-clip-path: polygon(0 0, 100% 0, 50% 100%, 0% 100%);
+                clip-path: polygon(0 0, 100% 0, 50% 100%, 0% 100%);
+    }
+
+    .gallery-section {
+        height: auto;
+    }
+
+    .cars-gallery {
+        justify-content: space-around;
+    }
+
+    .cars-gallery div {
+        width: 40%;
+    }
+
+    .contact-section {
+        height: auto;
+        padding: 50px 0
+    }
+
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .contact-right {
+        -webkit-clip-path: none;
+                clip-path: none;
+    }
+
+}
+
+
+@media all and (max-width: 1000px) {
+
+    .heading-text h2:nth-child(4),
+    .heading-text h3 {
+        display: none;
+    }
+
+    .heading-text a {
+        margin: 0;
+        font-size: 14px;
+        ;
+    }
+
+    .heading-text h1 {
+        font-size: 35px;
+    }
+
+    .heading-text h2 {
+        font-size: 12px;
+    }
+
+    .about-content div p {
+        margin-top: 20px;
+        line-height: 20px;
+        width: 85%
+    }
+
+    .about-content div h2 {
+        width: 85%;
+        font-size: 30px;
+    }
+
+    .about-content div img {
+        width: 100%;
+    }
+
+    .offers-section {
+        height: auto;
+        padding: 50px 0;
+        padding-left: 60px;
+    }
+
+    .offers {
+        flex-direction: column;
+    }
+
+    .offers-section .pricing {
+        width: 70%;
+        margin: 30px 0;
+        padding: 15px;
+    }
+
+    .offers-section .pricing:nth-child(2) {
+        margin-top: 30px;
+        width: 70%;
+    }
+}
+
+
+@media all and (max-width: 740px) {
+    .right-heading {
+        display: none;
+    }
+
+    .heading-section img {
+        max-width: 500px;
+        transform: translate(-50% -50%);
+    }
+
+    .heading-text {
+        align-items: center;
+        margin-left: 0;
+        justify-content: flex-start;
+    }
+
+    .heading-text h1 {
+        margin-bottom: 50px;
+    }
+
+    .heading-text div {
+        display: none;
+    }
+
+    .left-heading img {
+        order: 1;
+    }
+
+    .left-about {
+        display: none;
+    }
+
+    .about-content {
+        width: 90%;
+        height: 90%;
+        margin-left: 30px;
+    }
+
+    .cars-gallery div {
+        width: 90%;
+    }
+
+    .contact-section {
+        padding-left: 60px;
+    }
+
+    .contact-container {
+        width: 90%;
+    }
+}
+
+
+@media all and (max-width: 650px) {
+    .heading-section {
+        height: auto;
+    }
+
+    .heading-section img {
+        top: 20%;
+        width: 350px;
+    }
+
+    .heading-text {
+        justify-content: center;
+        margin: 0;
+    }
+
+    .main-nav {
+        width: 100%;
+    }
+
+    .nav-menu a {
+        margin: 15px;
+        font-size: 24px;
+    }
+
+    .main-nav h2 {
+        font-size: 25px;
+    }
+
+    .start-menu {
+        height: 10vh;
+    }
+
+    .menu-social {
+        display: none;
+    }
+
+    .about-section {
+        padding: 0;
+    }
+
+    .about-content {
+        flex-direction: column;
+        padding: 20px;
+        margin-left: 0;
+    }
+
+    .offers-section {
+        padding-left: 0;
+    }
+
+    .offers-heading h2 {
+        font-size: 40px;
+    }
+
+    .offers-heading h2 span {
+        font-size: 50px;
+    }
+
+    .pricing h3 {
+        font-size: 25px;
+    }
+
+    .pricing p {
+        font-size: 16px;
+    }
+
+    .pricing p:last-child {
+        font-size: 50px;
+    }
+
+    .pricing p span {
+        font-size: 20px;
+    }
+
+    .gallery-section {
+        padding-left: 0;
+    }
+
+
+    .button {
+        padding: 10px;
+        font-size: 17px;
+    }
+
+    .contact-section {
+        padding-left: 0;
+    }
+
+    .contact-left {
+        padding: 20px;
+    }
+
+    .contact-left>p {
+        margin-bottom: 40px;
+    }
+
+    .contact-info {
+        margin: 10px;
+    }
+}
+
+
+@media all and (max-width: 480px) {
+    .heading-section img {
+        width: 300px;
+    }
+
+    .offers-heading h2 {
+        margin-top: 0;
+    }
+
+    .offers-section .pricing {
+        width: 75%;
+        height: 55vh;
+    }
+
+    .offers-section .pricing:nth-child(2) {
+        width: 75%;
+        height: 55vh;
+    }
+
+    .portfolio-filter .button {
+        color: var(--primary-color);
+        text-transform: uppercase;
+        padding: 0.4rem;
+        font-size: 1rem;
+        font-family: var(--main-font);
+    }
+
+    .contact-info p {
+        letter-spacing: 0;
+        line-height: 20px;
+    }
+
+    .contact-info i {
+        padding: 10px;
+        font-size: 25px;
+    }
+
+    .contact-left {
+        padding: 10px;
+    }
+}
